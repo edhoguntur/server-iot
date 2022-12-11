@@ -23,14 +23,12 @@ db.sequelize = sequelize;
 // this line we will create the tables and association.
 // ARDUINO & ASSOCIATION
 db.arduinos = require('./arduino.model')(sequelize, Sequelize);
-//db.sensors = require('./sensor.model')(sequelize, Sequelize);
+db.sensors = require('./sensor.model')(sequelize, Sequelize);
 
-//db.arduinos.hasMany(db.sensors, { as: "sensors"});
-// db.sensors.belongsTo(db.arduinos, {
-//     foreignKey: "arduinoId",
-//     as: "arduino"
-// });
-//
-
+db.arduinos.hasMany(db.sensors, { as: "sensors"});
+db.sensors.belongsTo(db.arduinos, {
+    foreignKey: "arduinoId",
+    as: "arduino"
+});
 
 module.exports = db;
