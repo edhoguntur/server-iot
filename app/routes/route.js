@@ -14,11 +14,12 @@ router.use((req, res, next) => {
 router.get("/", base.home);
 
 // define the arduinos route
-router.post("/arduino/create", arduino.create)
+router.post("/arduino/insert", arduino.insert);
 router.get("/arduino/findAll", arduino.findAll);
 router.get("/arduino/findByName/:name", arduino.findByName);
 
 // define sensors route
-router.get("/sensor/findAll", sensor.findAll)
+router.get("/sensor/findAll", sensor.findAll);
+router.post("/sensor/insert", auth.clientAPI, sensor.insert);
 
 module.exports = router

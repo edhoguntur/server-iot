@@ -1,4 +1,3 @@
-const { where } = require('sequelize');
 const db = require('../models');
 const arduino = db.arduinos;
 const Op = db.sequelize.Op;
@@ -11,7 +10,7 @@ const genAPIKey = () => {
 };
 
 // Create and Save a new micro
-exports.create = (req, res) => {
+exports.insert = (req, res) => {
   // Validate request
   if (!req.body.name) {
     res.status(400).send({
