@@ -2,7 +2,8 @@ module.exports = (sequelize, Sequelize) => {
     const arduino = sequelize.define("arduino", {
       name: {
         type: Sequelize.STRING,
-        unique: true
+        unique: true,
+        allowNull: false
       },
       serial: {
         type: Sequelize.STRING
@@ -12,7 +13,8 @@ module.exports = (sequelize, Sequelize) => {
       },
       apiKey:{
         type: Sequelize.STRING,
-        unique: true
+        unique: true,
+        allowNull: false
       },
       isActive: {
         type: Sequelize.BOOLEAN,

@@ -28,13 +28,6 @@ db.sequelize.sync()
     console.log("Failed to sync the db: "+ err.message);
 });
 
-// test first simple route
-// app.get("/", (req,res) =>{
-//     res.json({
-//         message: "Hello the World of IoT"
-//     });
-// });
-
 // all routes
 app.use(arduinoRouter);
 
