@@ -17,7 +17,7 @@ exports.clientAPI = async (req, res, next) => {
             next();
         }
     } catch (e) {
-        console.log('%%%%%%%% error :', e);
+//         console.log('%%%%%%%% error :', e);
         return res.status(400).send({
             status: false,
             response: "Invalid Api Key"
